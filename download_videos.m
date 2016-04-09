@@ -41,9 +41,9 @@ else
 	disp('Downloading videos in parallel, this may take a while.')
 	disp(' ')
 	
-	if matlabpool('size') == 0,
-		matlabpool open;
-	end
+	%if matlabpool('size') == 0,
+	%	matlabpool open;
+%	end
 	parfor k = 1:numel(videos),
 		disp(['Downloading and extracting ' videos{k} '...']);
 		unzip(['http://cvlab.hanyang.ac.kr/tracker_benchmark/seq/' videos{k} '.zip'], base_path);
